@@ -1,0 +1,26 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+nav {
+  margin-bottom: 20px;
+}
+
+nav a {
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+nav a.active {
+  font-weight: bold;
+}
+
+aside {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 6px 12px;
+  cursor: pointer;
+}

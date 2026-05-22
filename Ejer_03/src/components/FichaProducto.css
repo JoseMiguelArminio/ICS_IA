@@ -1,0 +1,17 @@
+.ficha {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 10px;
+  width: 220px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  text-align: center;
+}
+.ficha img {
+  margin-bottom: 10px;
+}
+.fichas-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
