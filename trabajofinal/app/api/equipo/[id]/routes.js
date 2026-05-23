@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import pool from "@/lib/db";
 
-// ✏️ EDITAR
+// EDITAR
 export async function PUT(req, { params }) {
 
   try {
@@ -42,7 +42,7 @@ export async function PUT(req, { params }) {
 }
 
 
-// ❌ BORRAR
+// BORRAR
 export async function DELETE(req, { params }) {
 
   try {

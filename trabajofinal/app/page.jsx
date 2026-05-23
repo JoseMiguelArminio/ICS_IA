@@ -11,7 +11,7 @@ export default function Home() {
   const [status, setStatus] = useState("");
   const [order, setOrder] = useState("");
 
-  // 📦 cargar equipos
+  // cargar equipos
   const getEquipos = async () => {
 
     let url = "/api/equipos?";
@@ -27,7 +27,7 @@ export default function Home() {
     setEquipos(data);
   };
 
-  // 🚀 populate
+  // populate
   const populate = async () => {
 
     const res = await fetch("/api/populate");
@@ -38,7 +38,7 @@ export default function Home() {
     getEquipos();
   };
 
-  // ❌ borrar
+  // borrar
   const deleteEquipo = async (id) => {
 
     const confirmDelete = confirm(
@@ -69,7 +69,7 @@ export default function Home() {
 
       <hr />
 
-      {/* 🔍 FILTROS */}
+      {/* FILTROS */}
       <div style={{
         display: "flex",
         gap: "10px",
@@ -117,7 +117,7 @@ export default function Home() {
 
       </div>
 
-      {/* 📦 GRID */}
+      {/* GRID */}
       <div style={{
         display: "grid",
         gridTemplateColumns: "repeat(3, 1fr)",

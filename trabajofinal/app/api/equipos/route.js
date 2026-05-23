@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import pool from "@/lib/db";
 
-// 📦 GET EQUIPOS + FILTROS SQL DINÁMICOS
+// GET EQUIPOS + FILTROS SQL DINÁMICOS
 export async function GET(req) {
 
   try {
@@ -16,25 +16,25 @@ export async function GET(req) {
     let sql = "SELECT * FROM equipos WHERE 1=1";
     let values = [];
 
-    // 🔍 filtro nombre
+    // filtro nombre
     if (name) {
       sql += " AND name LIKE ?";
       values.push(`%${name}%`);
     }
 
-    // 🏷️ filtro marca
+    // filtro marca
     if (brand) {
       sql += " AND brand = ?";
       values.push(brand);
     }
 
-    // 📦 filtro estado
+    // filtro estado
     if (status) {
       sql += " AND status = ?";
       values.push(status);
     }
 
-    // ↕️ ordenación
+    // ordenación
     if (order === "name") {
       sql += " ORDER BY name ASC";
     }
@@ -57,7 +57,7 @@ export async function GET(req) {
 }
 
 
-// ➕ CREAR EQUIPO
+// CREAR EQUIPO
 export async function POST(req) {
 
   try {
@@ -70,7 +70,7 @@ export async function POST(req) {
       status
     } = await req.json();
 
-    // ✅ validaciones
+    // validaciones
     if (!name || !brand || !serial_number) {
       return NextResponse.json(
         { error: "Campos obligatorios" },
@@ -78,7 +78,7 @@ export async function POST(req) {
       );
     }
 
-    // 🔍 evitar duplicados
+    // evitar duplicados
     const [exists] = await pool.query(
       "SELECT id FROM equipos WHERE serial_number = ?",
       [serial_number]

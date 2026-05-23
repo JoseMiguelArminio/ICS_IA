@@ -7,7 +7,7 @@ export async function POST(req) {
 
     const { name, email } = await req.json();
 
-    // ✅ validación
+    // validación
     if (!name || !email) {
       return NextResponse.json(
         { error: "Campos obligatorios" },
@@ -15,7 +15,7 @@ export async function POST(req) {
       );
     }
 
-    // 🔍 comprobar duplicado
+    // comprobar duplicado
     const [exists] = await pool.query(
       "SELECT * FROM users WHERE email = ?",
       [email]
@@ -28,7 +28,7 @@ export async function POST(req) {
       );
     }
 
-    // ➕ insertar
+    // insertar
     await pool.query(
       "INSERT INTO users (name, email) VALUES (?, ?)",
       [name, email]

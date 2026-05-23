@@ -26,7 +26,7 @@ export default function SignIn() {
       return;
     }
 
-    // 💾 guardar sesión
+    // guardar sesión
     localStorage.setItem(
       "user",
       JSON.stringify(data)
